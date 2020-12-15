@@ -15,7 +15,7 @@ def check_price():
     soup = BeautifulSoup(page.content,'html.parser')
     
     title = soup.find(id="productTile").get_text()
-    #This is <spain id="  "> (product's name)
+    #This is <span id="  "> (product's name)
     price = soup.find(id="priceblock_outprice").get_text()
     #The <span id="   "> (product's price)
     converted_price = float(price[0:5])
