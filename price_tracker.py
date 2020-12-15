@@ -15,11 +15,11 @@ def check_price():
     soup = BeautifulSoup(page.content,'html.parser')
     
     title = soup.find(id="productTile").get_text()
-    #This is <span id="  "> (product's name)
+    #This is the <span id="  "> (product's name).
     price = soup.find(id="priceblock_outprice").get_text()
-    #The <span id="   "> (product's price)
+    #This is the <span id="   "> (product's price).
     converted_price = float(price[0:5])
-    #Show only the first digits of the price
+    #Show only the first digits of the price.
     
     if(converted_price < 1000):
         send_mail()
@@ -34,7 +34,7 @@ def send_mail():
     server.ehlo()
 
     server.login('your_address@gmail.com', 'your_password')
-    #You can either activate Google two-factor auth. and create a password just for this service.
+    #You can either activate Google two-factor auth. and create a password just for this service (recommended).
     #Or you can use your Gmail password by enabling Less Secure App Access.
 
     subject = 'Price fell down'
@@ -55,4 +55,4 @@ def send_mail():
 while(True):
     check_price()
     time.sleep(3600)
-    #(seconds)Period of time that the code runs and checks the website: 60 = every minute | 3600 = every hour | 86400 = once a day.
+    #(3600 seconds) This is the interim between each checkup (tracking consistency): 60s = every minute | 3600s = every hour | 86400s = once a day.
