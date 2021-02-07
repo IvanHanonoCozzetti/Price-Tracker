@@ -1,7 +1,7 @@
 # Price-Tracker
 Price tracker that sends an email when a price goes down using Web Scraping through BeautifulSoup4.
 
-In order to track a price:
+### In order to track a price:
 1. Change the `URL` to yours.
 2. Change the title and the price respectively to the `<span in>` located in the HTML of the website.
 3. Adjust the price alert, `server.login` to the email address details.
@@ -10,3 +10,6 @@ In order to track a price:
 
 ## SMTP
 Simple Mail Transfer Protocol (SMTP) is a protocol, which handles sending e-mail and routing e-mail between mail servers. Python provides smtplib module, which defines an SMTP client session object that can be used to send mail to any Internet machine with an SMTP or ESMTP listener daemon.
+
+## Requests
+Requests allows you to send HTTP/1.1 requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your PUT & POST data — we can simply use the json method.
